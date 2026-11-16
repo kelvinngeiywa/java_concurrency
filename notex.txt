@@ -1,0 +1,55 @@
+Concurrency allows multiple tasks to run at the same time(simultaneously) improving application performance
+and responsiveness
+
+Java provides supports for concurrency through threading allowing developers to execute tasks in parallel
+(Running multiple tasks at the same time), manage shared resources and handle synchronization
+
+Key terms:
+Thread - smallest unit of execution in a Java program
+1)Concurrency - running multiple threads simultaneously, either on a single CPU(via time slicing)
+ or multiple CPU cores
+ Thread safety - ensuring shared resources are accessed safely by multiple threads
+
+ What I will learn>
+ Creating and managing threads,
+ synchronize access to shared resources,
+ Use high level concurrency utilities
+
+2) Creating threads in Java -
+ There are two ways::
+ Extending the thread class
+ Implementing the runnable interface
+
+ 1) Extending the thread class
+ --Implemented by extending a class with thread class and overriding its run method
+ --Use start() method to initiate thread and invoke run method in a separate execution path
+
+ 2)Implementing the runnable interface
+ The runnable interface is used when you want to separate the task from thread management
+ or extending another class--
+ -Runnable interface is used to define a task that can be executed by thread, without managing thread itself.
+ Used when a class already extends another class since Java does not support multiple inheritance
+ By implementing Runnable you keep task logic separate from thread creation, promoting cleaner and more
+ flexible code design
+
+ 3)Thread lifecycle
+ A thread in Java goes through several states::
+ -New -- a thread is created but not started
+ -Runnable --ready to run or running
+ -Blocked/Waiting - Waiting for a resource or monitor lock
+ -Timed Waiting --waiting for a specified time ** (example via sleep() or wait(timeout)).
+ -Terminated --Completed execution or stopped.
+ (Understanding lifecycle helps manage threads effectively, especially when coordinating multiple tasks)
+
+4) Synchronization
+When multiple threads access the same shared resource, They can interfere with each other causing race condition
+or inconsistent results.
+Synchronization ensures only one thread access critical section of the code at a time.
+In Java synchronization is achieved using synchronized keyword.
+
+1)Synchronized Methods
+--The synchronized keyword ensures only one thread executes a method at a time.
+
+
+
+
